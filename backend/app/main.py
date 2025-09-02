@@ -7,6 +7,12 @@ app = FastAPI(title="Duckonymous API")
 async def root():
     return {"message": "Welcome to Duckonymous API. Try /duckonymous"}
 
+
+@app.get("/api/v1/health")
+async def health_check():
+    return {"status": "healthy"}
+
+
 @app.get("/duckonymous")
 async def duckonymous():
     """
